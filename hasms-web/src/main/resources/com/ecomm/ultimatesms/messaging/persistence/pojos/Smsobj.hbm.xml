@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 2, 2012 6:59:50 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Smsobj" table="smsobj" schema="public">
+        <id name="pksmsobjid" type="long">
+            <column name="pksmsobjid" />
+            <generator class="sequence">
+                <param name="sequence">smsobj_pkey_seq</param>
+            </generator>
+        </id>
+        <property name="smsid" type="string">
+            <column name="smsid" length="100" />
+        </property>
+        <property name="smsc" type="string">
+            <column name="smsc" length="100" />
+        </property>
+        <property name="reciever" type="string">
+            <column name="reciever" length="100" />
+        </property>
+        <property name="sender" type="string">
+            <column name="sender" length="100" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" length="1000" />
+        </property>
+        <property name="footer" type="string">
+            <column name="footer" length="1000" />
+        </property>
+        <property name="operator" type="string">
+            <column name="operator" length="100" />
+        </property>
+        <property name="loadeddate" type="timestamp">
+            <column name="loadeddate" length="35" />
+        </property>
+        <property name="futuredate" type="timestamp">
+            <column name="futuredate" length="35" />
+        </property>
+        <property name="sysuserid" type="java.lang.Long">
+            <column name="sysuserid" />
+        </property>
+        <property name="clientmanager" type="java.lang.Long">
+            <column name="clientmanager" />
+        </property>
+        <property name="smscount" type="java.lang.Integer">
+            <column name="smscount" />
+        </property>
+        <property name="holdingaccountid" type="java.lang.Long">
+            <column name="holdingaccountid" />
+        </property>
+        <property name="deliverinfo" type="string">
+            <column name="deliverinfo" length="200" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="50" />
+        </property>
+    </class>
+</hibernate-mapping>

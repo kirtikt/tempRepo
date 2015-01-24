@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-ejb" name="sender:ejb exploded">
+    <output-path>$PROJECT_DIR$/pl4sms-sender/target/pl4sms-sender-1.0-SNAPSHOT</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="sender/ejb/EJB" />
+      <element id="module-output" name="sender" />
+    </root>
+  </artifact>
+</component>

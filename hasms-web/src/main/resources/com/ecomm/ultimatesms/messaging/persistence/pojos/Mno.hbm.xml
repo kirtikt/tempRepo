@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 29, 2011 7:42:01 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Mno" table="mno" schema="public">
+        <id name="pkmnoid" type="long">
+            <column name="pkmnoid" />
+         <generator class="sequence">
+                <param name="sequence">mno_pkmnoid_seq1</param>
+            </generator>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="uc" type="java.lang.Long">
+            <column name="uc" />
+        </property>
+        <property name="dc" type="timestamp">
+            <column name="dc" length="35" />
+        </property>
+        <property name="um" type="java.lang.Long">
+            <column name="um" />
+        </property>
+        <property name="dm" type="timestamp">
+            <column name="dm" length="35" />
+        </property>
+        <property name="ud" type="java.lang.Long">
+            <column name="ud" />
+        </property>
+        <property name="dd" type="timestamp">
+            <column name="dd" length="35" />
+        </property>
+        <property name="sourcenumber" type="string">
+            <column name="sourcenumber" length="50" />
+        </property>
+        <property name="smscost" type="java.lang.Double">
+            <column name="smscost" precision="17" scale="17" />
+        </property>
+        <property name="replycost" type="java.lang.Double">
+            <column name="replycost" precision="17" scale="17" />
+        </property>
+        <property name="address" type="string">
+            <column name="address" length="50" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="50" />
+        </property>
+        <property name="emailid" type="string">
+            <column name="emailid" length="50" />
+        </property>
+        <property name="blandno" type="string">
+            <column name="blandno" length="50" />
+        </property>
+        <property name="bmobno" type="string">
+            <column name="bmobno" length="50" />
+        </property>
+        <property name="bemailid" type="string">
+            <column name="bemailid" length="50" />
+        </property>
+        <property name="alandno" type="string">
+            <column name="alandno" length="50" />
+        </property>
+        <property name="amobno" type="string">
+            <column name="amobno" length="50" />
+        </property>
+        <property name="aemailid" type="string">
+            <column name="aemailid" length="50" />
+        </property>
+        <property name="tflandno" type="string">
+            <column name="tflandno" length="50" />
+        </property>
+        <property name="tfmobno" type="string">
+            <column name="tfmobno" length="50" />
+        </property>
+        <property name="tfemailid" type="string">
+            <column name="tfemailid" length="50" />
+        </property>
+        <property name="tslandno" type="string">
+            <column name="tslandno" length="50" />
+        </property>
+        <property name="tsemailid" type="string">
+            <column name="tsemailid" length="50" />
+        </property>
+        <property name="tsmobno" type="string">
+            <column name="tsmobno" length="50" />
+        </property>
+        <set name="startnumbers" table="startnumber" inverse="false" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="fkmnoid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Startnumber" />
+        </set>
+        <set name="mnodirectproperties" table="mnodirectproperty" inverse="false" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="fkmnoid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Mnodirectproperty" />
+        </set>
+        <set name="mnosmscproperties" table="mnosmscproperty" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="fkmnoid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Mnosmscproperty" />
+        </set>
+    </class>
+</hibernate-mapping>

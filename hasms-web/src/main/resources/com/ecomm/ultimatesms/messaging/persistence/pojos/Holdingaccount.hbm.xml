@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Holdingaccount" table="holdingaccount" schema="public">
+        <id name="pkeyholdingaccountid" type="long">
+            <column name="pkeyholdingaccountid" />
+            <generator class="sequence">
+                <param name="sequence">holdingaccount_pkeyholdingaccountid_seq1</param>
+            </generator>
+        </id>
+        <many-to-one name="clientmanager" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Clientmanager" lazy="false" fetch="select">
+            <column name="fkclientmanagerid" />
+        </many-to-one>
+        <property name="creditsdeposited" type="java.lang.Double">
+            <column name="creditsdeposited" precision="17" scale="17" />
+        </property>
+        <property name="creditsleft" type="java.lang.Double">
+            <column name="creditsleft" precision="17" scale="17" />
+        </property>
+        <property name="smscount" type="java.lang.Integer">
+            <column name="smscount" />
+        </property>
+        <property name="smssentcount" type="java.lang.Integer">
+            <column name="smssentcount" />
+        </property>
+         <property name="smsfailedcount" type="java.lang.Integer">
+            <column name="smsfailedcount" />
+        </property>
+        <property name="uc" type="java.lang.Integer">
+            <column name="uc" />
+        </property>
+          <property name="smsrate" type="java.lang.Double">
+            <column name="smsrate" precision="17" scale="17" />
+        </property>
+        
+           <property name="clientTransactionReference" type="string">
+            <column name="clientTransactionReference" length="200" />
+        </property>
+
+   <property name="systemTransactionReference" type="string">
+            <column name="systemTransactionReference" length="200" />
+        </property>
+        
+        
+        
+        <property name="dc" type="timestamp">
+            <column name="dc" length="35" />
+        </property>
+        <property name="um" type="java.lang.Integer">
+            <column name="um" />
+        </property>
+        <property name="dm" type="timestamp">
+            <column name="dm" length="35" />
+        </property>
+        <property name="timedate" type="timestamp">
+            <column name="timedate" length="35" />
+        </property>
+        <property name="countofcellno" type="java.lang.Integer">
+            <column name="countofcellno" />
+        </property>
+        <property name="afteravailablecredits" type="java.lang.Double">
+            <column name="afteravailablecredits" precision="17" scale="17" />
+        </property>
+        <property name="beforeavailablecredits" type="java.lang.Double">
+            <column name="beforeavailablecredits" precision="17" scale="17" />
+        </property>
+        <set name="smses" table="sms" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkholdingaccountid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sms" />
+        </set>
+    </class>
+</hibernate-mapping>

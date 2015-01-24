@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.stashed.Profit" table="profit" schema="public">
+        <id name="pkprofitid" type="long">
+            <column name="pkprofitid" />
+            <generator class="sequence">
+                <param name="sequence">profit_pkprofitid_pkey</param>
+            </generator>
+        </id>
+        <property name="profitedusermanagerid" type="java.lang.Long">
+            <column name="profitedusermanagerid" />
+        </property>
+        <property name="profit" type="java.lang.Double">
+            <column name="profit" precision="17" scale="17" />
+        </property>
+        <property name="datetime" type="timestamp">
+            <column name="datetime" length="35" />
+        </property>
+        <property name="profitedbyusermanagerid" type="java.lang.Long">
+            <column name="profitedbyusermanagerid" />
+        </property>
+    </class>
+</hibernate-mapping>

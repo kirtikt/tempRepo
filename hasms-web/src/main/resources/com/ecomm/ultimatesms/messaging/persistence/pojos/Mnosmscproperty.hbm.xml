@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Mnosmscproperty" table="mnosmscproperty" schema="public">
+        <id name="pkmnosmscpropropid" type="long">
+            <column name="pkmnosmscpropropid" />
+           <generator class="sequence">
+                <param name="sequence">mnosmscproperty_pkmnosmscpropropid_seq1</param>
+            </generator>
+        </id>
+        <many-to-one name="sendinginterface" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sendinginterface" lazy="false" fetch="select">
+            <column name="fksendinginterface" />
+        </many-to-one>
+        <many-to-one name="mno" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Mno" lazy="false" fetch="select">
+            <column name="fkmnoid" />
+        </many-to-one>
+        <property name="concatenation" type="java.lang.Boolean">
+            <column name="concatenation" />
+        </property>
+        <property name="offeredinterface" type="string">
+            <column name="offeredinterface" length="45" />
+        </property>
+        <property name="deliveryreciepts" type="java.lang.Boolean">
+            <column name="deliveryreciepts" />
+        </property>
+        <property name="uc" type="java.lang.Long">
+            <column name="uc" />
+        </property>
+        <property name="dc" type="timestamp">
+            <column name="dc" length="35" />
+        </property>
+        <property name="um" type="java.lang.Long">
+            <column name="um" />
+        </property>
+        <property name="dm" type="timestamp">
+            <column name="dm" length="35" />
+        </property>
+        <property name="ud" type="java.lang.Long">
+            <column name="ud" />
+        </property>
+        <property name="dd" type="timestamp">
+            <column name="dd" length="35" />
+        </property>
+        <property name="smscost" type="java.lang.Double">
+            <column name="smscost" precision="17" scale="17" />
+        </property>
+        <property name="replycost" type="java.lang.Double">
+            <column name="replycost" precision="17" scale="17" />
+        </property>
+        <property name="sourcenumber" type="string">
+            <column name="sourcenumber" length="50" />
+        </property>
+        <property name="alphanumericsenderid" type="java.lang.Boolean">
+            <column name="alphanumericsenderid" />
+        </property>
+        <property name="replypath" type="java.lang.Boolean">
+            <column name="replypath" />
+        </property>
+    </class>
+</hibernate-mapping>

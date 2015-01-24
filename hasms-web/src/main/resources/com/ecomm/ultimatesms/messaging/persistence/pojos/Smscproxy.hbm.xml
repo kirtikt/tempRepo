@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2011 6:05:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Smscproxy" table="smscproxy" schema="public">
+        <id name="pksmscproxyid" type="long">
+            <column name="pksmscproxyid" />
+             <generator class="sequence">
+                <param name="sequence">smscproxy_pksmscproxyid_seq1</param>
+            </generator>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="45" />
+        </property>
+        <property name="uc" type="java.lang.Long">
+            <column name="uc" />
+        </property>
+        <property name="dc" type="timestamp">
+            <column name="dc" length="35" />
+        </property>
+        <property name="um" type="java.lang.Long">
+            <column name="um" />
+        </property>
+        <property name="dm" type="timestamp">
+            <column name="dm" length="35" />
+        </property>
+        <property name="ud" type="java.lang.Long">
+            <column name="ud" />
+        </property>
+        <property name="dd" type="timestamp">
+            <column name="dd" length="35" />
+        </property>
+        <property name="availablecredits" type="java.lang.Long">
+            <column name="availablecredits" />
+        </property>
+        <property name="spendcredits" type="java.lang.Long">
+            <column name="spendcredits" />
+        </property>
+        <property name="smscost" type="java.lang.Integer">
+            <column name="smscost" />
+        </property>
+        <property name="replycost" type="java.lang.Integer">
+            <column name="replycost" />
+        </property>
+        <property name="blandno" type="string">
+            <column name="blandno" length="50" />
+        </property>
+        <property name="bmobno" type="string">
+            <column name="bmobno" length="50" />
+        </property>
+        <property name="bemailid" type="string">
+            <column name="bemailid" length="50" />
+        </property>
+        <property name="alandno" type="string">
+            <column name="alandno" length="50" />
+        </property>
+        <property name="amobno" type="string">
+            <column name="amobno" length="50" />
+        </property>
+        <property name="aemailid" type="string">
+            <column name="aemailid" length="50" />
+        </property>
+        <property name="aphyadd" type="string">
+            <column name="aphyadd" length="500" />
+        </property>
+        <property name="tflandno" type="string">
+            <column name="tflandno" length="50" />
+        </property>
+        <property name="tfmobno" type="string">
+            <column name="tfmobno" length="50" />
+        </property>
+        <property name="tfemailid" type="string">
+            <column name="tfemailid" length="50" />
+        </property>
+        <property name="tslandno" type="string">
+            <column name="tslandno" length="50" />
+        </property>
+        <property name="tsmobno" type="string">
+            <column name="tsmobno" length="50" />
+        </property>
+        <property name="tsemailid" type="string">
+            <column name="tsemailid" length="50" />
+        </property>
+        <set name="smscproxyproperties" table="smscproxyproperty" inverse="false" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="fksmscid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Smscproxyproperty" />
+        </set>
+        <set name="admincredits" table="admincredit" inverse="true" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="fksmsccredit" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.stashed.AdminCredit" />
+        </set>
+    </class>
+</hibernate-mapping>

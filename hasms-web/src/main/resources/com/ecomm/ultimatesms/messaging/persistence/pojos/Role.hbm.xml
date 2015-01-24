@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.stashed.Role" table="role" schema="public">
+        <id name="pkroleid" type="long">
+            <column name="pkroleid" />
+             <generator class="sequence">
+                <param name="sequence">role_pkroleId_seq</param>
+            </generator>
+        </id>
+        <property name="rolename" type="string">
+            <column name="rolename" length="45" />
+        </property>
+        <set name="sysusers" table="sysuser" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkroleid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sysuser" />
+        </set>
+    </class>
+</hibernate-mapping>

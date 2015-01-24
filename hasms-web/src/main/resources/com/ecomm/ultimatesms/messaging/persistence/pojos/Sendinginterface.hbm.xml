@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping default-lazy="false">
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sendinginterface" table="sendinginterface" schema="public">
+        <id name="pksendinginterface" type="long">
+            <column name="pksendinginterface" />
+            <generator class="sequence">
+                <param name="sequence">sendinginterface_pksendinginterface_seq</param>
+            </generator>
+        </id>
+        <many-to-one name="smscproxyproperty" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Smscproxyproperty" lazy="false" fetch="select">
+            <column name="fksmscproxypropid" />
+        </many-to-one>
+        <property name="localsmscost" type="java.lang.Double">
+            <column name="localsmscost" precision="17" scale="17" />
+        </property>
+        <property name="localreplycost" type="java.lang.Double">
+            <column name="localreplycost" precision="17" scale="17" />
+        </property>
+        <property name="internationalsmscost" type="java.lang.Double">
+            <column name="internationalsmscost" precision="17" scale="17" />
+        </property>
+        <property name="intenationalreplycost" type="java.lang.Double">
+            <column name="intenationalreplycost" precision="17" scale="17" />
+        </property>
+        <property name="interfacename" type="string">
+            <column name="interfacename" length="200" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" />
+        </property>
+        <property name="interfacepojoname" type="string">
+            <column name="interfacepojoname" length="200" />
+        </property>
+        <property name="billingcode" type="string">
+            <column name="billingcode" length="200" />
+        </property>
+        <property name="refundcode" type="string">
+            <column name="refundcode" length="200" />
+        </property>
+        <property name="kannelname" type="string">
+            <column name="kannelname" length="50" />
+        </property>
+    
+        <set name="clientmanagers" table="clientmanager" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fksendingintefaceid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Clientmanager" />
+        </set>
+        <set name="mnosmscproperties" table="mnosmscproperty" inverse="false" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="fksendinginterface" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Mnosmscproperty" />
+        </set>
+        <set name="smses" table="sms" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fksendinginterfaceid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sms" />
+        </set>
+    </class>
+</hibernate-mapping>

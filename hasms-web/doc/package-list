@@ -1,0 +1,14 @@
+com.ecomm.mdb.ejb.exception
+com.ecomm.mdb.ejb.kannel
+com.ecomm.ultimatesms.designpattern
+com.ecomm.ultimatesms.messaging.admin.settings
+com.ecomm.ultimatesms.messaging.billing
+com.ecomm.ultimatesms.messaging.commons
+com.ecomm.ultimatesms.messaging.dbutils
+com.ecomm.ultimatesms.messaging.dbutilsCRUD
+com.ecomm.ultimatesms.messaging.feedback
+com.ecomm.ultimatesms.messaging.model
+com.ecomm.ultimatesms.messaging.persistence.pojos
+com.ecomm.ultimatesms.messaging.service
+com.ecomm.ultimatesms.messaging.transferMessage
+com.ecomm.ultimatesms.messaging.utils

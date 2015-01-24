@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hasms-web/hasms-web.iml" filepath="$PROJECT_DIR$/hasms-web/hasms-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pl4sms.iml" filepath="$PROJECT_DIR$/pl4sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pl4sms-common/pl4sms-common.iml" filepath="$PROJECT_DIR$/pl4sms-common/pl4sms-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pl4sms-loader/pl4sms-loader.iml" filepath="$PROJECT_DIR$/pl4sms-loader/pl4sms-loader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pl4sms-persistence/pl4sms-persistence.iml" filepath="$PROJECT_DIR$/pl4sms-persistence/pl4sms-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pl4sms-receipts/receipts.iml" filepath="$PROJECT_DIR$/pl4sms-receipts/receipts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pl4sms-sender/sender.iml" filepath="$PROJECT_DIR$/pl4sms-sender/sender.iml" />
+    </modules>
+  </component>
+</project>
+

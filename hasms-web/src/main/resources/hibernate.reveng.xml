@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+<type-mapping>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+	<sql-type jdbc-type="VARCHAR" hibernate-type="string"></sql-type>
+</type-mapping>
+
+
+     <table-filter match-schema="public" match-name="mnosmscost"/>
+  <table-filter match-schema="public" match-name="role"/>
+  <table-filter match-schema="public" match-name="sms"/>
+  <table-filter match-schema="public" match-name="smscproxy"/>
+  <table-filter match-schema="public" match-name="smscproxyproperty"/>
+  <table-filter match-schema="public" match-name="startnumber"/>
+  <table-filter match-schema="public" match-name="admincredit"/>
+  <table-filter match-schema="public" match-name="blacklist"/>
+  <table-filter match-schema="public" match-name="clientmanager"/>
+  <table-filter match-schema="public" match-name="creditaccount"/>
+  <table-filter match-schema="public" match-name="credits"/>
+  <table-filter match-schema="public" match-name="holdingaccount"/>
+  <table-filter match-schema="public" match-name="mno"/>
+  <table-filter match-schema="public" match-name="mnodirectproperty"/>
+  <table-filter match-schema="public" match-name="mnosmscproperty"/>
+  <table-filter match-schema="public" match-name="sysuser"/>
+  <table-filter match-schema="public" match-name="sendinginterface"/>
+  <table-filter match-schema="public" match-name="profit"/>     
+  <table-filter match-schema="public" match-name="smsobj"/>
+  
+  
+</hibernate-reverse-engineering>

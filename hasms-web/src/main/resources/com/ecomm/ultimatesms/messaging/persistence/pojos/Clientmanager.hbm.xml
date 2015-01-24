@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class
+  name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Clientmanager"
+  schema="public" table="clientmanager">
+  <id name="pkclientmanagerid" type="long">
+   <column name="pkclientmanagerid"/>
+   <generator class="sequence">
+    <param name="sequence">clientmanager_pkclientmanager_seq1</param>
+    <param name="allocationSize">50</param>
+   </generator>
+  </id>
+  <many-to-one
+   class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sendinginterface"
+   fetch="select" lazy="false" name="sendinginterface">
+   <column name="fksendingintefaceid"/>
+  </many-to-one>
+  <many-to-one
+   class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Creditaccount"
+   fetch="select" lazy="false" name="creditaccount">
+   <column name="fkcreditaccount"/>
+  </many-to-one>
+  <many-to-one
+   class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sysuser"
+   fetch="select" lazy="false" name="sysuser">
+   <column name="fkuserid"/>
+  </many-to-one>
+  <property generated="never" lazy="false" name="localsmscost" type="java.lang.Double">
+   <column name="localsmscost" precision="17" scale="17"/>
+  </property>
+  <property generated="never" lazy="false" name="localreplycost" type="java.lang.Double">
+   <column name="localreplycost" precision="17" scale="17"/>
+  </property>
+  <property generated="never" lazy="false" name="createdby" type="java.lang.Long">
+   <column name="createdby"/>
+  </property>
+  <property generated="never" lazy="false" name="internationalsmscost" type="java.lang.Double">
+   <column name="internationalsmscost" precision="17" scale="17"/>
+  </property>
+  <property generated="never" lazy="false" name="internationalreplycost" type="java.lang.Double">
+   <column name="internationalreplycost" precision="17" scale="17"/>
+  </property>
+  <property generated="never" lazy="false" name="isdeleted" type="java.lang.Boolean">
+   <column name="isdeleted"/>
+  </property>
+  <set fetch="select" inverse="true" lazy="true" name="smses"
+   sort="unsorted" table="sms">
+   <key>
+    <column name="fkclientmanagerid"/>
+   </key>
+   <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sms"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="holdingaccounts"
+   sort="unsorted" table="holdingaccount">
+   <key>
+    <column name="fkclientmanagerid"/>
+   </key>
+   <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Holdingaccount"/>
+  </set>
+  <set fetch="select" inverse="true" lazy="true" name="creditses"
+   sort="unsorted" table="credits">
+   <key>
+    <column name="fkclientmanagerid"/>
+   </key>
+   <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.stashed.Credits"/>
+  </set>
+ </class>
+</hibernate-mapping>

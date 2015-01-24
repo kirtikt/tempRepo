@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 1, 2011 6:05:27 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Smscproxyproperty" table="smscproxyproperty" schema="public">
+        <id name="pksmscpropid" type="long">
+            <column name="pksmscpropid" />
+           <generator class="sequence">
+                <param name="sequence">smscproxyproperty_pksmscpropid_seq1</param>
+            </generator>
+        </id>
+        <many-to-one name="smscproxy" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Smscproxy" lazy="false" fetch="select">
+            <column name="fksmscid" />
+        </many-to-one>
+        <property name="replypath" type="string">
+            <column name="replypath" length="45" />
+        </property>
+        <property name="sourcenumber" type="string">
+            <column name="sourcenumber" length="45" />
+        </property>
+        <property name="concatination" type="java.lang.Boolean">
+            <column name="concatination" />
+        </property>
+        <property name="offeredinterface" type="string">
+            <column name="offeredinterface" length="45" />
+        </property>
+        <property name="deliveryreciepts" type="java.lang.Boolean">
+            <column name="deliveryreciepts" />
+        </property>
+         <property name="alphanumericadd" type="java.lang.Boolean">
+            <column name="alphanumericadd" />
+        </property>
+        
+        <property name="speedofsms" type="string">
+            <column name="speedofsms" length="45" />
+        </property>
+        <property name="smscost" type="java.lang.Double">
+            <column name="smscost" precision="17" scale="17" />
+        </property>
+        <property name="replycost" type="java.lang.Double">
+            <column name="replycost" precision="17" scale="17" />
+        </property>
+        <property name="discount" type="string">
+            <column name="discount" length="45" />
+        </property>
+        <property name="kannelsmscname" type="string">
+            <column name="kannelsmscname" length="45" />
+        </property>
+        <property name="uc" type="java.lang.Long">
+            <column name="uc" />
+        </property>
+        <property name="dc" type="timestamp">
+            <column name="dc" length="35" />
+        </property>
+        <property name="um" type="java.lang.Long">
+            <column name="um" />
+        </property>
+        <property name="dm" type="timestamp">
+            <column name="dm" length="35" />
+        </property>
+        <property name="ud" type="java.lang.Long">
+            <column name="ud" />
+        </property>
+        <property name="dd" type="timestamp">
+            <column name="dd" length="35" />
+        </property>
+        <property name="sendinginterfaceid" type="java.lang.Long">
+            <column name="sendinginterfaceid" />
+        </property>
+       
+        <property name="name" type="string">
+            <column name="name" length="50" />
+        </property>
+        <set name="sendinginterfaces" table="sendinginterface" inverse="true" lazy="true" fetch="select" cascade="delete">
+            <key>
+                <column name="fksmscproxypropid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sendinginterface" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sms" table="sms" schema="public">
+        <id name="pksmsid" type="long">
+            <column name="pksmsid" />
+           <generator class="sequence">
+                <param name="sequence">sms_pksmsid_seq1</param>
+            </generator>
+        </id>
+
+      
+        <property name="smsid" type="string">
+            <column name="smsid" length="100" />
+        </property>
+
+
+
+
+   <property name="msgid" type="string">
+            <column name="msgid" length="200" />
+        </property>
+
+   <property name="DeliveryStatusDescription" type="string">
+            <column name="DeliveryStatusDescription" length="200" />
+        </property>
+
+   <property name="clientTransactionReference" type="string">
+            <column name="clientTransactionReference" length="200" />
+        </property>
+
+   <property name="systemTransactionReference" type="string">
+            <column name="systemTransactionReference" length="200" />
+        </property>
+
+
+
+
+
+
+<property name="identifier" type="string">
+            <column name="identifier" length="2000" />
+        </property>
+
+        <property name="message" type="string">
+            <column name="message" length="2000" />
+        </property>
+
+        <property name="source" type="string">
+            <column name="source" length="100" />
+        </property>
+
+        <property name="destination" type="string">
+            <column name="destination" length="100" />
+        </property>
+
+        <property name="status" type="string">
+            <column name="status" length="100" />
+        </property>
+
+        <property name="datetime" type="timestamp">
+            <column name="datetime" length="35" />
+        </property>
+
+        <property name="smscount" type="java.lang.Integer">
+            <column name="smscount" />
+        </property>
+
+        <property name="deliveryinfo" type="string">
+            <column name="deliveryinfo" length="200" />
+        </property>
+
+
+        <property name="creditbefore" type="java.lang.Double">
+            <column name="creditbefore" precision="17" scale="17" />
+        </property>
+
+
+        <property name="creditafter" type="java.lang.Double">
+            <column name="creditafter" precision="17" scale="17" />
+        </property>
+
+
+	<many-to-one name="clientmanager" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Clientmanager" lazy="false" fetch="select">
+            <column name="fkclientmanagerid" />
+        </many-to-one>
+           <many-to-one name="sendinginterface" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sendinginterface" lazy="false" fetch="select">
+            <column name="fksendinginterfaceid" />
+        </many-to-one>
+        <many-to-one name="holdingaccount" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Holdingaccount" lazy="false" fetch="select">
+            <column name="fkholdingaccountid" />
+        </many-to-one>
+
+        <property name="uc" type="java.lang.Integer">
+            <column name="uc" />
+        </property>
+
+        <property name="dc" type="timestamp">
+            <column name="dc" length="35" />
+        </property>
+
+        <property name="um" type="java.lang.Integer">
+            <column name="um" />
+        </property>
+
+        <property name="dm" type="timestamp">
+            <column name="dm" length="35" />
+        </property>
+
+        <property name="isnationalnumber" type="java.lang.Boolean">
+            <column name="isnationalnumber" />
+        </property>
+
+        <property name="isbilled" type="java.lang.Boolean">
+            <column name="isbilled" />
+        </property>
+
+
+          <property name="futurestatus" type="java.lang.Boolean">
+            <column name="futurestatus" />
+        </property>
+        
+        
+        <sql-insert check="none">Insert into SMS(smsid,msgid,deliverystatusdescription,clienttransactionreference,systemtransactionreference,identifier,message,source,destination,status,datetime,smscount,deliveryinfo,creditbefore,creditafter,fkclientmanagerid,fksendinginterfaceid,fkholdingaccountid,uc,dc,um,dm,isnationalnumber,isbilled,futurestatus,pksmsid)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)</sql-insert>        
+        <sql-update check="none">UPDATE sms SET  smsid=?,msgid=?,deliverystatusdescription=?,clienttransactionreference=?,systemtransactionreference=?,identifier=?,message=?,source=?,destination=?,status=?,datetime=?,smscount=?,deliveryinfo=?,creditbefore=?,creditafter=?,fkclientmanagerid=?,fksendinginterfaceid=?,fkholdingaccountid=?,uc=?,dc=?,um=?,dm=?,isnationalnumber=?,isbilled=?,futurestatus=?  WHERE pksmsid=?</sql-update>
+        
+        <sql-delete>DELETE from sms WHERE pksmsid = ?</sql-delete>
+        	
+    </class>
+</hibernate-mapping>

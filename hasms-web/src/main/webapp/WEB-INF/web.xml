@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<description>C'mon, you know what goes into a description, don't you?</description>
+	<display-name> payless4sms</display-name>
+	<servlet>
+		<description>recieve parameters from index.jsp to send single SMS</description>
+		<display-name>SendSingleMessage</display-name>
+		<servlet-name>SendSingleMessage</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.service.SendSingleMessage</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>LoadOnStartUp</display-name>
+		<servlet-name>LoadOnStartUp</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.service.LoadOnStartUp</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<display-name>AdminLogin</display-name>
+		<servlet-name>AdminLogin</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.AdminLogin</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>SendMultipleMessage</display-name>
+		<servlet-name>SendMultipleMessage</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.service.SendMultipleMessage</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>feeback</display-name>
+		<servlet-name>feedback</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.feedback.feedback</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>WriteTOExcel</display-name>
+		<servlet-name>WriteTOExcel</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.service.WriteTOExcel</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>DownloadExcel</display-name>
+		<servlet-name>DownloadExcel</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.service.DownloadExcel</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>CreditPerClient</display-name>
+		<servlet-name>CreditPerClient</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.CreditPerClient</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>replies</display-name>
+		<servlet-name>replies</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.feedback.replies</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>ClientCreditReport</display-name>
+		<servlet-name>ClientCreditReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.ClientCreditReport</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>RegisterUser</display-name>
+		<servlet-name>RegisterUser</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.RegisterUser</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>AddCredit</display-name>
+		<servlet-name>AddCredit</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.AddCredit</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>AdminCreditSummaryReport</display-name>
+		<servlet-name>AdminCreditSummaryReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.AdminCreditSummaryReport</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>EditUser</display-name>
+		<servlet-name>EditUser</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.EditUser</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>DeleteClient</display-name>
+		<servlet-name>DeleteClient</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.DeleteClient</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>TestServlet</display-name>
+		<servlet-name>TestServlet</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.TestServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>SummaryReport</display-name>
+		<servlet-name>SummaryReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.SummaryReport</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>SendingInterfaceSummaryReport</display-name>
+		<servlet-name>SendingInterfaceSummaryReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.SendingInterfaceSummaryReport</servlet-class>
+		
+	</servlet>
+	<servlet>
+		<display-name>ClientSummaryReport</display-name>
+		<servlet-name>ClientSummaryReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.ClientSummaryReport</servlet-class>
+	</servlet>
+	<servlet>
+		<display-name>ConfirmMultipleMessageSending</display-name>
+		<servlet-name>ConfirmMultipleMessageSending</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.service.ConfirmMultipleMessageSending</servlet-class>
+	</servlet>
+
+
+
+	<servlet-mapping>
+		<servlet-name>feedback</servlet-name>
+		<url-pattern>/feedback</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>SendMultipleMessage</servlet-name>
+		<url-pattern>/SendMultipleMessage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminLogin</servlet-name>
+		<url-pattern>/AdminLogin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SendSingleMessage</servlet-name>
+		<url-pattern>/SendSingleMessage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>WriteTOExcel</servlet-name>
+		<url-pattern>/WriteTOExcel</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DownloadExcel</servlet-name>
+		<url-pattern>/DownloadExcel</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreditPerClient</servlet-name>
+		<url-pattern>/CreditPerClient</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>replies</servlet-name>
+		<url-pattern>/replies</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ClientCreditReport</servlet-name>
+		<url-pattern>/ClientCreditReport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>RegisterUser</servlet-name>
+		<url-pattern>/RegisterUser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AddCredit</servlet-name>
+		<url-pattern>/AddCredit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminCreditSummaryReport</servlet-name>
+		<url-pattern>/AdminCreditSummaryReport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>EditUser</servlet-name>
+		<url-pattern>/EditUser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteClient</servlet-name>
+		<url-pattern>/DeleteClient</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TestServlet</servlet-name>
+		<url-pattern>/TestServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SummaryReport</servlet-name>
+		<url-pattern>/SummaryReport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SendingInterfaceSummaryReport</servlet-name>
+		<url-pattern>/SendingInterfaceSummaryReport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ClientSummaryReport</servlet-name>
+		<url-pattern>/ClientSummaryReport</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ConfirmMultipleMessageSending</servlet-name>
+		<url-pattern>/ConfirmMultipleMessageSending</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<display-name>ReportByCellNumber</display-name>
+		<servlet-name>ReportByCellNumber</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.service.ReportByCellNumber</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ReportByCellNumber</servlet-name>
+		<url-pattern>/ReportByCellNumber</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>SimpleReportRedirection</display-name>
+		<servlet-name>SimpleReportRedirection</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.SimpleReportRedirection</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SimpleReportRedirection</servlet-name>
+		<url-pattern>/SimpleReportRedirection</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>MultiReports</display-name>
+		<servlet-name>MultiReports</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.MultiReports</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MultiReports</servlet-name>
+		<url-pattern>/MultiReports</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<display-name>AdminSimpleReportRedirection</display-name>
+		<servlet-name>AdminSimpleReportRedirection</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.AdminSimpleReportRedirection</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminSimpleReportRedirection</servlet-name>
+		<url-pattern>/AdminSimpleReportRedirection</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>SetSmscProperty</display-name>
+		<servlet-name>SetSmscProperty</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.SetSmscProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetSmscProperty</servlet-name>
+		<url-pattern>/SetSmscProperty</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<display-name>SetMnoProperty</display-name>
+		<servlet-name>SetMnoProperty</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.SetMnoProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetMnoProperty</servlet-name>
+		<url-pattern>/SetMnoProperty</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<display-name>SetMnoSmscProperty</display-name>
+		<servlet-name>SetMnoSmscProperty</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.SetMnoSmscProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetMnoSmscProperty</servlet-name>
+		<url-pattern>/SetMnoSmscProperty</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>SetMno</display-name>
+		<servlet-name>SetMno</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.SetMno</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetMno</servlet-name>
+		<url-pattern>/SetMno</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>UpdateMno</display-name>
+		<servlet-name>UpdateMno</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.UpdateMno</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateMno</servlet-name>
+		<url-pattern>/UpdateMno</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<display-name>UpdateMnoProperty</display-name>
+		<servlet-name>UpdateMnoProperty</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.UpdateMnoProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateMnoProperty</servlet-name>
+		<url-pattern>/UpdateMnoProperty</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>EditSmscProperty</display-name>
+		<servlet-name>EditSmscProperty</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.EditSmscProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditSmscProperty</servlet-name>
+		<url-pattern>/EditSmscProperty</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<display-name>AdminDeleteFutureSms</display-name>
+		<servlet-name>AdminDeleteFutureSms</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.AdminDeleteFutureSms</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminDeleteFutureSms</servlet-name>
+		<url-pattern>/AdminDeleteFutureSms</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<display-name>SetSmscInterfaceProperty</display-name>
+		<servlet-name>SetSmscInterfaceProperty</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.SetSmscInterfaceProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetSmscInterfaceProperty</servlet-name>
+		<url-pattern>/SetSmscInterfaceProperty</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>GetClientIdForRemoveFutureSms</display-name>
+		<servlet-name>GetClientIdForRemoveFutureSms</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.GetClientIdForRemoveFutureSms</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetClientIdForRemoveFutureSms</servlet-name>
+		<url-pattern>/GetClientIdForRemoveFutureSms</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>UpdateSmscInterfaceProperty</display-name>
+		<servlet-name>UpdateSmscInterfaceProperty</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.UpdateSmscInterfaceProperty</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateSmscInterfaceProperty</servlet-name>
+		<url-pattern>/UpdateSmscInterfaceProperty</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>DeleteFutureSms</display-name>
+		<servlet-name>DeleteFutureSms</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.client.settings.DeleteFutureSms</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteFutureSms</servlet-name>
+		<url-pattern>/DeleteFutureSms</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>ChangePswd</display-name>
+		<servlet-name>ChangePswd</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.admin.settings.ChangePswd</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ChangePswd</servlet-name>
+		<url-pattern>/ChangePswd</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<display-name>DetailedSummaryReport</display-name>
+		<servlet-name>DetailedSummaryReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.DetailedSummaryReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DetailedSummaryReport</servlet-name>
+		<url-pattern>/DetailedSummaryReport</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>DetailedClientSummaryReport</display-name>
+		<servlet-name>DetailedClientSummaryReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.DetailedClientSummaryReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DetailedClientSummaryReport</servlet-name>
+		<url-pattern>/DetailedClientSummaryReport</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>BatchReport</display-name>
+		<servlet-name>BatchReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.BatchReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BatchReport</servlet-name>
+		<url-pattern>/BatchReport</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>DetailBatchReport</display-name>
+		<servlet-name>DetailBatchReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.DetailBatchReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DetailBatchReport</servlet-name>
+		<url-pattern>/DetailBatchReport</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<display-name>AdminBatchReport</display-name>
+		<servlet-name>AdminBatchReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.AdminBatchReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminBatchReport</servlet-name>
+		<url-pattern>/AdminBatchReport</url-pattern>
+	</servlet-mapping>
+
+
+
+
+	<servlet>
+		<display-name>SpeedReport</display-name>
+		<servlet-name>SpeedReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.SpeedReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SpeedReport</servlet-name>
+		<url-pattern>/SpeedReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>AdminDetailBatchReport</display-name>
+		<servlet-name>AdminDetailBatchReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.AdminDetailBatchReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AdminDetailBatchReport</servlet-name>
+		<url-pattern>/AdminDetailBatchReport</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet>
+		<display-name>RecordFailedSms</display-name>
+		<servlet-name>RecordFailedSms</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.RecordFailedSms</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RecordFailedSms</servlet-name>
+		<url-pattern>/RecordFailedSms</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<display-name>ResendFailedSms</display-name>
+		<servlet-name>ResendFailedSms</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.ResendFailedSms</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ResendFailedSms</servlet-name>
+		<url-pattern>/ResendFailedSms</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>LoadTest</display-name>
+		<servlet-name>LoadTest</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.loadtesting.LoadTest</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoadTest</servlet-name>
+		<url-pattern>/LoadTest</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>ClientList</display-name>
+		<servlet-name>ClientList</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.ajaxservice.ClientList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClientList</servlet-name>
+		<url-pattern>/ClientList</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<display-name>DownloadReportAPIByMap</display-name>
+		<servlet-name>DownloadReportAPIByMap</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.downloadreportAPI.ReportAPIByMap</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DownloadReportAPIByMap</servlet-name>
+		<url-pattern>/DownloadReportAPIByMap</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>ClientPurchaseReport</display-name>
+		<servlet-name>ClientPurchaseReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.clientreports.ClientPurchaseReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClientPurchaseReport</servlet-name>
+		<url-pattern>/ClientPurchaseReport</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>ClientPurchaseReportForAdmin</display-name>
+		<servlet-name>ClientPurchaseReportForAdmin</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.ClientPurchaseReportForAdmin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClientPurchaseReportForAdmin</servlet-name>
+		<url-pattern>/ClientPurchaseReportForAdmin</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<display-name>SendingInterfaceList</display-name>
+		<servlet-name>SendingInterfaceList</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.ajaxservice.SendingInterfaceList</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendingInterfaceList</servlet-name>
+		<url-pattern>/SendingInterfaceList</url-pattern>
+	</servlet-mapping>
+   
+   <servlet>
+		<display-name>SummaryBatchReport</display-name>
+		<servlet-name>SummaryBatchReport</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.SummaryBatchReport</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SummaryBatchReport</servlet-name>
+		<url-pattern>/SummaryBatchReport</url-pattern>
+	</servlet-mapping>
+	
+     <servlet>
+		<display-name>SortMap</display-name>
+		<servlet-name>SortMap</servlet-name>
+		<servlet-class>com.ecomm.ultimatesms.messaging.adminreports.SortMap</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SortMap</servlet-name>
+		<url-pattern>/SortMap</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>adminLogin.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+	<context-param>
+		<param-name>resteasy.servlet.mapping.prefix</param-name>
+		<param-value>/ws</param-value>
+	</context-param>
+ 
+ 
+	<servlet>
+		<servlet-name>bulksender-servlet</servlet-name>
+		<servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+		</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.ecomm.ultimatesms.messaging.ws.service.BulkSenderApplication</param-value>
+					
+		</init-param>
+	</servlet>
+ 
+	<servlet-mapping>
+		<servlet-name>bulksender-servlet</servlet-name>
+		<url-pattern>/ws/*</url-pattern>
+	</servlet-mapping>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error500.jsp</location>
+	</error-page>
+</web-app>

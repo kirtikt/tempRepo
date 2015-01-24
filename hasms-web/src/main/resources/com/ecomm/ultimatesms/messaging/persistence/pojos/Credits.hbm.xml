@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.stashed.Credits" table="credits" schema="public">
+        <id name="pkcreditid" type="long">
+            <column name="pkcreditid" />
+           <generator class="sequence">
+                <param name="sequence">credit_pkcreditid_seq1</param>
+            </generator>
+        </id>
+        <many-to-one name="clientmanager" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Clientmanager" lazy="false" fetch="select">
+            <column name="fkclientmanagerid" />
+        </many-to-one>
+        <property name="purchasedby" type="java.lang.Long">
+            <column name="purchasedby" />
+        </property>
+        <property name="purchasedamount" type="java.lang.Double">
+            <column name="purchasedamount" precision="17" scale="17" />
+        </property>
+        <property name="purchaseddate" type="timestamp">
+            <column name="purchaseddate" length="35" />
+        </property>
+        <property name="purchasedinternationalamount" type="java.lang.Double">
+            <column name="purchasedinternationalamount" precision="17" scale="17" />
+        </property>
+    </class>
+</hibernate-mapping>

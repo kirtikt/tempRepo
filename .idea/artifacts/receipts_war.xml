@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="receipts:war">
+    <output-path>$PROJECT_DIR$/pl4sms-receipts/target</output-path>
+    <root id="archive" name="pl4sms-receipts-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="receipts:war exploded" />
+    </root>
+  </artifact>
+</component>

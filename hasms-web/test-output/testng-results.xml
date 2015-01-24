@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="4876" started-at="2013-02-22T14:19:44Z" finished-at="2013-02-22T14:19:49Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="4876" started-at="2013-02-22T14:19:44Z" finished-at="2013-02-22T14:19:49Z">
+      <class name="com.ecomm.ultimatesms.messaging.ws.helper.Test">
+        <test-method status="PASS" signature="test()" name="test" duration-ms="4779" started-at="2013-02-22T14:19:44Z" finished-at="2013-02-22T14:19:49Z">
+        </test-method>
+      </class>
+    </test>
+  </suite>
+</testng-results>

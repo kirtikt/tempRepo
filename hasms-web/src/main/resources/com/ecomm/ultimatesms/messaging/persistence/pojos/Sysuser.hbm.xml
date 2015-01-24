@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2011 4:06:23 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping >
+    <class name="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Sysuser" table="sysuser" schema="public">
+        <id name="pkuserid" type="long">
+            <column name="pkuserid" />
+         <generator class="sequence">
+                <param name="sequence">user_pkuserid_seq1</param>
+            </generator>
+        </id>
+        <many-to-one name="role" class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.stashed.Role" lazy="false" fetch="select">
+            <column name="fkroleid" />
+        </many-to-one>
+        <property name="username" type="string">
+            <column name="username" length="200" />
+        </property>
+        <property name="userid" type="string">
+            <column name="userid" length="200" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="200" />
+        </property>
+        <property name="clientref" type="string">
+            <column name="clientref" length="200" />
+        </property>
+        <property name="uc" type="java.lang.Integer">
+            <column name="uc" />
+        </property>
+        <property name="dc" type="timestamp">
+            <column name="dc" length="35" />
+        </property>
+        <property name="um" type="java.lang.Integer">
+            <column name="um" />
+        </property>
+        <property name="dm" type="timestamp">
+            <column name="dm" length="35" />
+        </property>
+        <set name="clientmanagers" table="clientmanager" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fkuserid" />
+            </key>
+            <one-to-many class="com.ecomm.ultimatesms.messaging.com.ecomm.pl4sms.persistence.entities.Clientmanager" />
+        </set>
+    </class>
+</hibernate-mapping>

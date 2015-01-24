@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="sender:ejb">
+    <output-path>$PROJECT_DIR$/pl4sms-sender/target</output-path>
+    <root id="archive" name="pl4sms-sender-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="sender:ejb exploded" />
+    </root>
+  </artifact>
+</component>

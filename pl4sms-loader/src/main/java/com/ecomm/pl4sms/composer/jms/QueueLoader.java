@@ -22,6 +22,7 @@ public class QueueLoader {
     }
 
 
+
     public PL4_JMS_Session getQueueSession() {
         System.out.println( "Get queue session ...");
         Session session = null;

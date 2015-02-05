@@ -26,7 +26,7 @@ public class SMSReceiptDTO {
     public SMSReceiptDTO() {
 
     }
-
+//hello
     public String getAccountInfo() {
         return accountInfo;
     }
